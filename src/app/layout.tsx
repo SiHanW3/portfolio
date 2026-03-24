@@ -1,3 +1,12 @@
+// 顶部加 import
+import { Noto_Serif_SC } from "next/font/google";
+
+const notoSerif = Noto_Serif_SC({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-serif-cn",
+  display: "swap",
+});
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -13,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN" className="scroll-smooth">
+    <html lang="zh-CN" className={`scroll-smooth ${notoSerif.variable}`}>
       <body className="bg-cream-100 text-ink-900 antialiased">{children}</body>
     </html>
   );
